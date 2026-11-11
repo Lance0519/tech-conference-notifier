@@ -1,0 +1,18 @@
+{
+  "name": "Tech Conference Notifier",
+  "short_name": "TechConf",
+  "description": "Automated IT, Computer Science & Tech Conference Discovery and Notification Mobile App",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#38bdf8",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/static/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

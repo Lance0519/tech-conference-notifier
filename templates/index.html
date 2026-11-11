@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tech Conferences & Conventions Notifier</title>
+    <link rel="manifest" href="/static/manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <style>
+        :root {
+            --bg: #090d16;
+            --surface: #131b2e;
+            --surface-hover: #1c2742;
+            --border: #222f4c;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.2);
+            --ph-gold: #fbbf24;
+            --green: #10b981;
+            --red: #ef4444;
+            --purple: #a855f7;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding-bottom: 80px;
+            overflow-x: hidden;
+        }
+
+        /* Mobile Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(9, 13, 22, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 16px;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 17px;
+            color: var(--accent);
+            letter-spacing: -0.3px;
+        }
+
+        .sync-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .sync-btn:active {
+            transform: scale(0.96);
+            background: var(--surface-hover);
+        }
+
+        /* Search & Filter Bar */
+        .search-container {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .search-input {
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 10px 14px 10px 38px;
+            color: var(--text);
+            font-size: 15px;
+            outline: none;
+            transition: border 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .chips-scroll {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+            scrollbar-width: none;
+        }
+
+        .chips-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .chip {
+            white-space: nowrap;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 5px 12px;
+            border-radius: 16px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .chip.active {
+            background: var(--accent);
+            color: #090d16;
+            border-color: var(--accent);
+            font-weight: 600;
+        }
+
+        .chip.ph-chip.active {
+            background: var(--ph-gold);
+            color: #090d16;
+            border-color: var(--ph-gold);
+        }
+
+        /* Main Content Container */
+        main {
+            padding: 16px;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Event Card */
+        .event-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 14px;
+            transition: transform 0.15s, border-color 0.15s;
+            position: relative;
+        }
+
+        .event-card:active {
+            background: var(--surface-hover);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            gap: 8px;
+        }
+
+        .category-tag {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .bookmark-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 20px;
+            cursor: pointer;
+            padding: 2px;
+            line-height: 1;
+            transition: color 0.2s, transform 0.15s;
+        }
+
+        .bookmark-btn.saved {
+            color: var(--ph-gold);
+            transform: scale(1.1);
+        }
+
+        .event-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .event-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .meta-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .urgency-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--green);
+            background: rgba(16, 185, 129, 0.12);
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 8px;
+            border-top: 1px solid var(--border);
+            padding-top: 12px;
+        }
+
+        .btn-action {
+            flex: 1;
+            text-align: center;
+            padding: 9px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #090d16;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        /* Category Grid Tab */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .category-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 90px;
+        }
+
+        .category-card:active {
+            border-color: var(--accent);
+            background: var(--surface-hover);
+        }
+
+        .category-card-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .category-card-count {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 700;
+            margin-top: 8px;
+        }
+
+        /* Bottom Navigation Bar */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 64px;
+            background: rgba(9, 13, 22, 0.96);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 200;
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 12px;
+            transition: color 0.15s;
+        }
+
+        .nav-item.active {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .nav-icon {
+            font-size: 20px;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+        }
+        .empty-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        /* Toast notification inside app */
+        .app-toast {
+            position: fixed;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-20px);
+            background: var(--accent);
+            color: #090d16;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 1000;
+            pointer-events: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .app-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div id="toast" class="app-toast">Sync completed!</div>
+
+    <!-- Mobile Header -->
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <span>🔔</span>
+                <span>TechConf Alert</span>
+            </div>
+            <button class="sync-btn" onclick="syncNow()">
+                <span id="syncSpinner">🔄</span>
+                <span>Sync Now</span>
+            </button>
+        </div>
+
+        <div class="search-container" id="searchContainer">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" id="searchInput" placeholder="Search AI, Security, Manila, Cloud..." oninput="handleSearch()">
+        </div>
+
+        <div class="chips-scroll" id="filterChips">
+            <div class="chip active" onclick="setFilter('all', this)">All Events</div>
+            <div class="chip ph-chip" onclick="setFilter('ph', this)">🇵🇭 Philippines</div>
+            <div class="chip" onclick="setFilter('virtual', this)">🌐 Online / Hybrid</div>
+            <div class="chip" onclick="setFilter('free', this)">🎟️ Free Admission</div>
+        </div>
+    </header>
+
+    <!-- Main Screens -->
+    <main>
+        <!-- Tab 1: Explore Feed -->
+        <section id="tabExplore">
+            <div class="section-title">
+                <span id="eventsCount">Upcoming Conferences</span>
+                <span style="font-size:12px; font-weight:600; color:var(--accent);">Auto-Updated</span>
+            </div>
+            <div id="eventsFeed">
+                <div class="empty-state">
+                    <div class="empty-icon">⏳</div>
+                    <p>Loading upcoming tech conferences...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 2: 16 Categories -->
+        <section id="tabCategories" style="display:none;">
+            <div class="section-title">
+                <span>16 IT & Computer Science Domains</span>
+            </div>
+            <div class="category-grid" id="categoryGrid">
+                <!-- Loaded dynamically -->
+            </div>
+        </section>
+
+        <!-- Tab 3: Saved Events -->
+        <section id="tabSaved" style="display:none;">
+            <div class="section-title">
+                <span>Saved & Bookmarked</span>
+            </div>
+            <div id="savedFeed">
+                <!-- Loaded dynamically -->
+            </div>
+        </section>
+
+        <!-- Tab 4: Notifications & Info -->
+        <section id="tabAlerts" style="display:none;">
+            <div class="section-title">
+                <span>Notification Center & History</span>
+            </div>
+            <div id="alertsFeed">
+                <!-- Loaded dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <div class="nav-item active" onclick="switchTab('explore', this)">
+            <span class="nav-icon">🧭</span>
+            <span>Explore</span>
+        </div>
+        <div class="nav-item" onclick="switchTab('categories', this)">
+            <span class="nav-icon">🏷️</span>
+            <span>Categories</span>
+        </div>
+        <div class="nav-item" onclick="switchTab('saved', this)">
+            <span class="nav-icon">⭐</span>
+            <span>Saved</span>
+        </div>
+        <div class="nav-item" onclick="switchTab('alerts', this)">
+            <span class="nav-icon">🔔</span>
+            <span>Alerts</span>
+        </div>
+    </nav>
+
+    <script>
+        let allEvents = [];
+        let currentFilter = 'all';
+        let currentCategory = null;
+
+        // Register Service Worker for PWA
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/static/sw.js').catch(console.error);
+        }
+
+        async function fetchEvents() {
+            try {
+                const res = await fetch('/api/events?days=180');
+                const data = await res.json();
+                allEvents = data.events || [];
+                renderEvents();
+                loadCategories();
+            } catch (err) {
+                console.error('Fetch error:', err);
+                document.getElementById('eventsFeed').innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-icon">⚠️</div>
+                        <p>Unable to connect to mobile backend service.<br>Ensure python api is running.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function renderEvents() {
+            const feed = document.getElementById('eventsFeed');
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+
+            let filtered = allEvents.filter(e => {
+                // Search query
+                if (query) {
+                    const haystack = `${e.name} ${e.category} ${e.city} ${e.country} ${e.description}`.toLowerCase();
+                    if (!haystack.includes(query)) return false;
+                }
+
+                // Category filter
+                if (currentCategory && e.category !== currentCategory) return false;
+
+                // Chip filter
+                if (currentFilter === 'ph') return e.is_philippines;
+                if (currentFilter === 'virtual') return e.is_online;
+                if (currentFilter === 'free') return e.is_free;
+
+                return true;
+            });
+
+            document.getElementById('eventsCount').innerText = `${filtered.length} Upcoming Conferences`;
+
+            if (filtered.length === 0) {
+                feed.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-icon">🔍</div>
+                        <p>No conferences found matching filters.<br>Try tapping "All Events".</p>
+                    </div>
+                `;
+                return;
+            }
+
+            feed.innerHTML = filtered.map(c => {
+                const tagColor = getCategoryColor(c.category);
+                const starFilled = c.is_bookmarked ? '⭐' : '☆';
+                const starClass = c.is_bookmarked ? 'saved' : '';
+                const flag = c.is_philippines ? '🇵🇭 ' : '';
+
+                return `
+                <div class="event-card">
+                    <div class="card-top">
+                        <span class="category-tag" style="background:${tagColor}22; color:${tagColor}; border:1px solid ${tagColor}44;">
+                            ${c.category}
+                        </span>
+                        <button class="bookmark-btn ${starClass}" onclick="toggleBookmark('${c.id}', this)" title="Bookmark">
+                            ${starFilled}
+                        </button>
+                    </div>
+
+                    <div class="event-title">${c.name}</div>
+
+                    <div class="event-meta">
+                        <div class="meta-row">
+                            <span>📅</span>
+                            <span><strong>${c.formatted_date}</strong></span>
+                        </div>
+                        <div class="meta-row">
+                            <span>📍</span>
+                            <span>${flag}${c.location_str}</span>
+                        </div>
+                        ${c.fee_amount && c.fee_amount !== 'Not announced' ? `
+                        <div class="meta-row">
+                            <span>🎟️</span>
+                            <span>${c.fee_amount}</span>
+                        </div>` : ''}
+                    </div>
+
+                    <div class="urgency-badge">
+                        <span>⏰</span>
+                        <span>${c.status_label}</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="${c.url}" target="_blank" rel="noopener noreferrer" class="btn-action btn-primary">
+                            Open Official Site &rarr;
+                        </a>
+                        <a href="/api/calendar/${c.id}.ics" download class="btn-action btn-secondary" title="Save to Mobile Calendar">
+                            📅 Calendar
+                        </a>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        async function toggleBookmark(id, btn) {
+            try {
+                const res = await fetch(`/api/bookmarks/${id}`, { method: 'POST' });
+                const data = await res.json();
+                const event = allEvents.find(e => e.id === id);
+                if (event) event.is_bookmarked = data.is_bookmarked;
+                btn.innerHTML = data.is_bookmarked ? '⭐' : '☆';
+                btn.classList.toggle('saved', data.is_bookmarked);
+                showToast(data.is_bookmarked ? 'Saved to Bookmarks!' : 'Removed from Bookmarks');
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        function setFilter(type, el) {
+            currentFilter = type;
+            document.querySelectorAll('#filterChips .chip').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            renderEvents();
+        }
+
+        function handleSearch() {
+            renderEvents();
+        }
+
+        function switchTab(tab, el) {
+            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+            el.classList.add('active');
+
+            ['Explore', 'Categories', 'Saved', 'Alerts'].forEach(t => {
+                document.getElementById(`tab${t}`).style.display = 'none';
+            });
+
+            if (tab === 'explore') {
+                document.getElementById('tabExplore').style.display = 'block';
+                document.getElementById('searchContainer').style.display = 'block';
+                document.getElementById('filterChips').style.display = 'flex';
+                currentCategory = null;
+                renderEvents();
+            } else if (tab === 'categories') {
+                document.getElementById('tabCategories').style.display = 'block';
+                document.getElementById('searchContainer').style.display = 'none';
+                document.getElementById('filterChips').style.display = 'none';
+                loadCategories();
+            } else if (tab === 'saved') {
+                document.getElementById('tabSaved').style.display = 'block';
+                document.getElementById('searchContainer').style.display = 'none';
+                document.getElementById('filterChips').style.display = 'none';
+                loadSaved();
+            } else if (tab === 'alerts') {
+                document.getElementById('tabAlerts').style.display = 'block';
+                document.getElementById('searchContainer').style.display = 'none';
+                document.getElementById('filterChips').style.display = 'none';
+                loadAlerts();
+            }
+        }
+
+        async function loadCategories() {
+            try {
+                const res = await fetch('/api/categories');
+                const data = await res.json();
+                const grid = document.getElementById('categoryGrid');
+                grid.innerHTML = data.categories.map(c => `
+                    <div class="category-card" onclick="filterByCategory('${c.name}')">
+                        <div class="category-card-name">${c.name}</div>
+                        <div class="category-card-count">${c.count} ${c.count === 1 ? 'event' : 'events'}</div>
+                    </div>
+                `).join('');
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        function filterByCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.nav-item')[0].click();
+            showToast(`Filtering: ${cat}`);
+        }
+
+        async function loadSaved() {
+            const feed = document.getElementById('savedFeed');
+            try {
+                const res = await fetch('/api/bookmarks');
+                const data = await res.json();
+                if (data.events.length === 0) {
+                    feed.innerHTML = `
+                        <div class="empty-state">
+                            <div class="empty-icon">⭐</div>
+                            <p>No saved conferences yet.<br>Tap the star icon on any conference card to save it offline!</p>
+                        </div>
+                    `;
+                    return;
+                }
+                feed.innerHTML = data.events.map(c => `
+                    <div class="event-card">
+                        <div class="event-title">${c.name}</div>
+                        <div class="event-meta">
+                            <div>📅 <strong>${c.formatted_date}</strong></div>
+                            <div>📍 ${c.location_str}</div>
+                        </div>
+                        <div class="card-actions">
+                            <a href="${c.url}" target="_blank" rel="noopener noreferrer" class="btn-action btn-primary">Open Website</a>
+                            <a href="/api/calendar/${c.id}.ics" download class="btn-action btn-secondary">📅 Calendar</a>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        async function loadAlerts() {
+            const feed = document.getElementById('alertsFeed');
+            try {
+                const res = await fetch('/api/notifications');
+                const data = await res.json();
+                if (data.notifications.length === 0) {
+                    feed.innerHTML = `
+                        <div class="empty-state">
+                            <div class="empty-icon">🔔</div>
+                            <p>No alerts logged yet.<br>Alerts will appear here when discoveries and reminders trigger.</p>
+                        </div>
+                    `;
+                    return;
+                }
+                feed.innerHTML = data.notifications.map(n => `
+                    <div class="event-card" style="padding:12px;">
+                        <div style="font-weight:700; font-size:14px; color:var(--accent);">🔔 ${n.trigger_type.toUpperCase()}</div>
+                        <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">
+                            Channel: <strong>${n.channel}</strong> &bull; ${new Date(n.sent_at).toLocaleString()}
+                        </div>
+                    </div>
+                `).join('');
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        async function syncNow() {
+            const spinner = document.getElementById('syncSpinner');
+            spinner.innerText = '⏳';
+            showToast('Discovering upcoming tech events...');
+            try {
+                await fetch('/api/sync', { method: 'POST' });
+                await fetchEvents();
+                showToast('Discovery complete! Catalog refreshed.');
+            } catch (e) {
+                console.error(e);
+                showToast('Sync error.');
+            } finally {
+                spinner.innerText = '🔄';
+            }
+        }
+
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.innerText = msg;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 2200);
+        }
+
+        function getCategoryColor(cat) {
+            if (cat.includes('Artificial Intelligence') || cat.includes('Data Science')) return '#a855f7';
+            if (cat.includes('Cybersecurity')) return '#ef4444';
+            if (cat.includes('Cloud')) return '#38bdf8';
+            if (cat.includes('Software')) return '#10b981';
+            return '#f59e0b';
+        }
+
+        // Initial Load
+        fetchEvents();
+    </script>
+</body>
+</html>

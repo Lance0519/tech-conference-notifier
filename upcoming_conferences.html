@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming IT & Tech Conferences</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --border: #334155;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 24px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        h1 {
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .search-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            font-size: 16px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .badge {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 9999px;
+        }
+        .status {
+            font-size: 12px;
+            font-weight: 600;
+            color: #10b981;
+        }
+        h3 {
+            margin: 0 0 12px 0;
+            font-size: 18px;
+        }
+        .meta {
+            color: var(--text-muted);
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+        .desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border);
+            padding-top: 12px;
+        }
+        .btn {
+            background: var(--accent);
+            color: #0f172a;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+        }
+        .cfp {
+            font-size: 12px;
+            color: #f59e0b;
+        }
+        .fee {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔔 Upcoming IT, Computer Science & Tech Conferences</h1>
+            <p style="color:var(--text-muted);">Discovered automatically &bull; Last updated November 11, 2026 12:30 PM</p>
+        </header>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search conferences, topics, cities, or countries..." onkeyup="filterCards()">
+        </div>
+        <div class="grid" id="cardGrid">
+            
+            <div class="card" data-category="Software Engineering" data-country="Philippines">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Software Engineering</span>
+                    <span class="status">Starts in 10 days (Next Week)</span>
+                </div>
+                <h3>DEVCON Summit Philippines 2026</h3>
+                <div class="meta">
+                    <div>📅 Nov 21-22, 2026</div>
+                    <div>📍 🇵🇭 Taguig, Metro Manila, Philippines</div>
+                    <div>🏢 DEVCON Philippines</div>
+                </div>
+                <p class="desc">The biggest developer conference in the Philippines bringing together 2,000+ tech leaders, software engineers, and innovators.</p>
+                <div class="card-footer">
+                    
+                    <span class='fee'>₱1,500 - ₱3,500 (Student discounts available)</span>
+                    <a href="https://devcon.ph/summit" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Cybersecurity" data-country="Philippines">
+                <div class="card-header">
+                    <span class="badge" style="background:#ef444422; color:#ef4444; border:1px solid #ef444444;">Cybersecurity</span>
+                    <span class="status">Starts in 15 days (~1 month)</span>
+                </div>
+                <h3>ROOTCON 20 2026</h3>
+                <div class="meta">
+                    <div>📅 Nov 26-27, 2026</div>
+                    <div>📍 🇵🇭 Hybrid (Tagaytay City, Philippines + Online)</div>
+                    <div>🏢 ROOTCON Information Security</div>
+                </div>
+                <p class="desc">The premier information security and hacking conference in the Philippines featuring hands-on villages, capture the flag, and cutting-edge security research.</p>
+                <div class="card-footer">
+                    
+                    <span class='fee'>₱4,500 - ₱12,000</span>
+                    <a href="https://www.rootcon.org" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Philippines">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 17 days (~1 month)</span>
+                </div>
+                <h3>Philippine National IT Conference (NITC) 2026</h3>
+                <div class="meta">
+                    <div>📅 Nov 28-29, 2026</div>
+                    <div>📍 🇵🇭 Hybrid (Manila, Philippines + Online)</div>
+                    <div>🏢 Philippine Computer Society (PCS)</div>
+                </div>
+                <p class="desc">The national convention of IT professionals, academics, and government leaders addressing cybersecurity, national IT infrastructure, and digital government.</p>
+                <div class="card-footer">
+                    
+                    <span class='fee'>₱2,500 - ₱4,500</span>
+                    <a href="https://philippinecomputersociety.org" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Software Engineering" data-country="Philippines">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Software Engineering</span>
+                    <span class="status">Starts in 22 days (~1 month)</span>
+                </div>
+                <h3>PSIA SOFTCON 2026</h3>
+                <div class="meta">
+                    <div>📅 Dec 03-04, 2026</div>
+                    <div>📍 🇵🇭 Pasay City, Metro Manila, Philippines</div>
+                    <div>🏢 Philippine Software Industry Association</div>
+                </div>
+                <p class="desc">The annual software conference showcasing digital transformation, enterprise architecture, cloud computing, and AI in the software industry.</p>
+                <div class="card-footer">
+                    
+                    <span class='fee'>₱5,000 - ₱9,000</span>
+                    <a href="https://www.psia.org.ph" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Cybersecurity" data-country="Philippines">
+                <div class="card-header">
+                    <span class="badge" style="background:#ef444422; color:#ef4444; border:1px solid #ef444444;">Cybersecurity</span>
+                    <span class="status">Starts in 27 days (~1 month)</span>
+                </div>
+                <h3>PhilSec - Cybersecurity Philippines Summit 2026</h3>
+                <div class="meta">
+                    <div>📅 Dec 08-09, 2026</div>
+                    <div>📍 🇵🇭 Pasay City, Metro Manila, Philippines</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc">National conference and exhibition focusing on cyber threat intelligence, zero trust architecture, and critical national infrastructure defense.</p>
+                <div class="card-footer">
+                    
+                    <span class='fee'>Free admission for IT professionals</span>
+                    <a href="https://philsec.com" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Web and Mobile Development" data-country="Philippines">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Web and Mobile Development</span>
+                    <span class="status">Starts in 31 days</span>
+                </div>
+                <h3>GDG DevFest Manila 2026</h3>
+                <div class="meta">
+                    <div>📅 Dec 12, 2026</div>
+                    <div>📍 🇵🇭 Manila, Philippines</div>
+                    <div>🏢 Google Developer Group Manila</div>
+                </div>
+                <p class="desc">Community-led developer festival covering Android, Flutter, Cloud, Gemini API, and Machine Learning.</p>
+                <div class="card-footer">
+                    
+                    <span class='fee'>Free (Registration required)</span>
+                    <a href="https://gdg.community.dev/gdg-manila/" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Cloud Computing and DevOps" data-country="Germany">
+                <div class="card-header">
+                    <span class="badge" style="background:#06b6d422; color:#06b6d4; border:1px solid #06b6d444;">Cloud Computing and DevOps</span>
+                    <span class="status">Starts TODAY!</span>
+                </div>
+                <h3>CLC</h3>
+                <div class="meta">
+                    <div>📅 Nov 11-12, 2026</div>
+                    <div>📍 🌐 Mannheim, Germany</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Apr 21, 2026</div>
+                    
+                    <a href="https://clc-conference.eu/index_en.php" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="U.S.A.">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts TOMORROW!</span>
+                </div>
+                <h3>SpiceWorld</h3>
+                <div class="meta">
+                    <div>📅 Nov 12-13, 2026</div>
+                    <div>📍 🌐 Austin, TX, U.S.A.</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: May 01, 2026</div>
+                    
+                    <a href="https://www.spiceworks.com/spiceworld" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Poland">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts TOMORROW!</span>
+                </div>
+                <h3>CMS Conf</h3>
+                <div class="meta">
+                    <div>📅 Nov 12-14, 2026</div>
+                    <div>📍 🌐 Gdynia, Poland</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Apr 30, 2026</div>
+                    
+                    <a href="https://cmsconf.com" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Software Engineering" data-country="Japan">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Software Engineering</span>
+                    <span class="status">Starts TOMORROW!</span>
+                </div>
+                <h3>Tokyo Test Fest</h3>
+                <div class="meta">
+                    <div>📅 Nov 12-13, 2026</div>
+                    <div>📍 🌐 Tokyo, Japan</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Apr 10, 2026</div>
+                    
+                    <a href="https://tokyotestfest.com" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Not announced">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts TOMORROW!</span>
+                </div>
+                <h3>Ubuntu Summit</h3>
+                <div class="meta">
+                    <div>📅 Nov 12-13, 2026</div>
+                    <div>📍 🌐 Online / Virtual</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Oct 01, 2026</div>
+                    
+                    <a href="https://ubuntu.com/summit" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Australia">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 2 days (This Week)</span>
+                </div>
+                <h3>VIC AI Boom</h3>
+                <div class="meta">
+                    <div>📅 Nov 13, 2026</div>
+                    <div>📍 🌐 Melbourne, Australia</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Oct 16, 2026</div>
+                    
+                    <a href="https://vicaiboom.com" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="U.K.">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 5 days (This Week)</span>
+                </div>
+                <h3>NextGen Intelligence Conference: Data, Cloud & AI</h3>
+                <div class="meta">
+                    <div>📅 Nov 16-17, 2026</div>
+                    <div>📍 🌐 Online / Virtual</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Oct 09, 2026</div>
+                    
+                    <a href="https://techaiconf.com" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Software Engineering" data-country="Germany">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Software Engineering</span>
+                    <span class="status">Starts in 5 days (This Week)</span>
+                </div>
+                <h3>Software Architecture Gathering</h3>
+                <div class="meta">
+                    <div>📅 Nov 16-19, 2026</div>
+                    <div>📍 🌐 Berlin, Germany</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Jun 09, 2026</div>
+                    
+                    <a href="https://www.software-architecture-gathering.com" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Germany">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 5 days (This Week)</span>
+                </div>
+                <h3>API Conference Berlin</h3>
+                <div class="meta">
+                    <div>📅 Nov 16-20, 2026</div>
+                    <div>📍 🌐 Online / Virtual</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://apiconference.net/berlin" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Germany">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 5 days (This Week)</span>
+                </div>
+                <h3>AI Engineering Summit</h3>
+                <div class="meta">
+                    <div>📅 Nov 16-20, 2026</div>
+                    <div>📍 🌐 Berlin, Germany</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://ai-engineering-summit.de" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Germany">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 5 days (This Week)</span>
+                </div>
+                <h3>MLCon Berlin</h3>
+                <div class="meta">
+                    <div>📅 Nov 16-20, 2026</div>
+                    <div>📍 🌐 Online / Virtual</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://mlconference.ai/berlin" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Germany">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 5 days (This Week)</span>
+                </div>
+                <h3>VibeKode Berlin</h3>
+                <div class="meta">
+                    <div>📅 Nov 16-20, 2026</div>
+                    <div>📍 🌐 Online / Virtual</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://vibekode.it/berlin" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Web and Mobile Development" data-country="Austria">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Web and Mobile Development</span>
+                    <span class="status">Starts in 5 days (This Week)</span>
+                </div>
+                <h3>HalfStack Vienna</h3>
+                <div class="meta">
+                    <div>📅 Nov 16, 2026</div>
+                    <div>📍 🌐 Vienna, Austria</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://halfstackconf.com/vienna" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Web and Mobile Development" data-country="U.S.A.">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Web and Mobile Development</span>
+                    <span class="status">Starts in 5 days (This Week)</span>
+                </div>
+                <h3>AI Coding Summit New York Edition</h3>
+                <div class="meta">
+                    <div>📅 Nov 16-19, 2026</div>
+                    <div>📍 🌐 New York, NY, U.S.A.</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Jul 09, 2026</div>
+                    
+                    <a href="https://aicodingsummit.com/nyc" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Web and Mobile Development" data-country="U.S.A.">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Web and Mobile Development</span>
+                    <span class="status">Starts in 5 days (This Week)</span>
+                </div>
+                <h3>JSNation US</h3>
+                <div class="meta">
+                    <div>📅 Nov 16-19, 2026</div>
+                    <div>📍 🌐 New York, NY, U.S.A.</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Jul 13, 2026</div>
+                    
+                    <a href="https://jsnation.us" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Software Engineering" data-country="Germany">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Software Engineering</span>
+                    <span class="status">Starts in 5 days (This Week)</span>
+                </div>
+                <h3>Agile Testing Days</h3>
+                <div class="meta">
+                    <div>📅 Nov 16-19, 2026</div>
+                    <div>📍 🌐 Online / Virtual</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Mar 29, 2026</div>
+                    
+                    <a href="https://agiletestingdays.com" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Computer Science" data-country="Netherlands">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Computer Science</span>
+                    <span class="status">Starts in 5 days (This Week)</span>
+                </div>
+                <h3>CCS 2026</h3>
+                <div class="meta">
+                    <div>📅 Nov 16-18, 2026</div>
+                    <div>📍 🌐 World Forum, Netherlands</div>
+                    <div>🏢 CCS</div>
+                </div>
+                <p class="desc">ACM Conference on Computer and Communications Security</p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Jan 14, 2026</div>
+                    
+                    <a href="https://www.sigsac.org/ccs/CCS2026/" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Not announced">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 6 days (This Week)</span>
+                </div>
+                <h3>XtremePython Online Conference</h3>
+                <div class="meta">
+                    <div>📅 Nov 17, 2026</div>
+                    <div>📍 🌐 Online / Virtual</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Jul 10, 2026</div>
+                    
+                    <a href="https://xtremepython.dev" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Web and Mobile Development" data-country="U.S.A.">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Web and Mobile Development</span>
+                    <span class="status">Starts in 6 days (This Week)</span>
+                </div>
+                <h3>React Summit US</h3>
+                <div class="meta">
+                    <div>📅 Nov 17-20, 2026</div>
+                    <div>📍 🌐 Online / Virtual</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Jul 09, 2026</div>
+                    
+                    <a href="https://reactsummit.us" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Not announced">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 6 days (This Week)</span>
+                </div>
+                <h3>betterCode() .NET 11.0</h3>
+                <div class="meta">
+                    <div>📅 Nov 17, 2026</div>
+                    <div>📍 🌐 Online / Virtual</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://net.bettercode.eu" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Germany">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 6 days (This Week)</span>
+                </div>
+                <h3>Open Source Monitoring conference</h3>
+                <div class="meta">
+                    <div>📅 Nov 17-19, 2026</div>
+                    <div>📍 🌐 Nürnberg, Germany</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Jun 30, 2026</div>
+                    
+                    <a href="https://osmc.de" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Australia">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 7 days (This Week)</span>
+                </div>
+                <h3>Community Over Code Sydney</h3>
+                <div class="meta">
+                    <div>📅 Nov 18-19, 2026</div>
+                    <div>📍 🌐 Sydney, Australia</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://communityovercode.apache.org/events/sydney-2026" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Australia">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 7 days (This Week)</span>
+                </div>
+                <h3>ASF Community Over Code / ChurConf</h3>
+                <div class="meta">
+                    <div>📅 Nov 18-19, 2026</div>
+                    <div>📍 🌐 Sidney, Australia</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Jul 31, 2026</div>
+                    
+                    <a href="https://au.churconf.com" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Spain">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 8 days (Next Week)</span>
+                </div>
+                <h3>X-Ops Conference Madrid</h3>
+                <div class="meta">
+                    <div>📅 Nov 19-21, 2026</div>
+                    <div>📍 🌐 Madrid, Spain</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Aug 31, 2026</div>
+                    
+                    <a href="https://xopsconference.com" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Switzerland">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 9 days (Next Week)</span>
+                </div>
+                <h3>Agentic Engineering Days Zurich</h3>
+                <div class="meta">
+                    <div>📅 Nov 20, 2026</div>
+                    <div>📍 🌐 Zurich, Switzerland</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Jul 23, 2026</div>
+                    
+                    <a href="https://www.agenticdays.com" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Web and Mobile Development" data-country="India">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Web and Mobile Development</span>
+                    <span class="status">Starts in 9 days (Next Week)</span>
+                </div>
+                <h3>droidCon India</h3>
+                <div class="meta">
+                    <div>📅 Nov 20, 2026</div>
+                    <div>📍 🌐 Bengaluru, India</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://india.droidcon.com" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="India">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 10 days (Next Week)</span>
+                </div>
+                <h3>flutterCon India</h3>
+                <div class="meta">
+                    <div>📅 Nov 21, 2026</div>
+                    <div>📍 🌐 Bangalore, India</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://india.fluttercon.dev" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Not announced">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 13 days (Next Week)</span>
+                </div>
+                <h3>XtremeAI Online Conference</h3>
+                <div class="meta">
+                    <div>📅 Nov 24, 2026</div>
+                    <div>📍 🌐 Online / Virtual</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Jul 10, 2026</div>
+                    
+                    <a href="https://xtremeai.dev" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Data Science and Analytics" data-country="Lithuania">
+                <div class="card-header">
+                    <span class="badge" style="background:#8b5cf622; color:#8b5cf6; border:1px solid #8b5cf644;">Data Science and Analytics</span>
+                    <span class="status">Starts in 13 days (Next Week)</span>
+                </div>
+                <h3>Big Data Europe</h3>
+                <div class="meta">
+                    <div>📅 Nov 24-27, 2026</div>
+                    <div>📍 🌐 Online / Virtual</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Nov 23, 2026</div>
+                    
+                    <a href="https://bigdataconference.eu" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="U.K.">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 14 days (Next Week)</span>
+                </div>
+                <h3>AI World Congress</h3>
+                <div class="meta">
+                    <div>📅 Nov 25-26, 2026</div>
+                    <div>📍 🌐 London, U.K.</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://aiconference.london" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="India">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 14 days (Next Week)</span>
+                </div>
+                <h3>WeAreDevelopers Conference India</h3>
+                <div class="meta">
+                    <div>📅 Nov 25-26, 2026</div>
+                    <div>📍 🌐 Bengaluru, India</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Jul 24, 2026</div>
+                    
+                    <a href="https://www.wearedevelopers.com/conference-india" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="U.K.">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 15 days (~1 month)</span>
+                </div>
+                <h3>EdTech Conference</h3>
+                <div class="meta">
+                    <div>📅 Nov 26-27, 2026</div>
+                    <div>📍 🌐 London, U.K.</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://edtechconferences.london" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="India">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 16 days (~1 month)</span>
+                </div>
+                <h3>Workplace Ninjas India</h3>
+                <div class="meta">
+                    <div>📅 Nov 27-28, 2026</div>
+                    <div>📍 🌐 Delhi, India</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Jul 31, 2026</div>
+                    
+                    <a href="https://www.wpninjas-india.com" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Networking and Telecommunications" data-country="South Korea">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Networking and Telecommunications</span>
+                    <span class="status">Starts in 17 days (~1 month)</span>
+                </div>
+                <h3>FOSS for All Conference</h3>
+                <div class="meta">
+                    <div>📅 Nov 28, 2026</div>
+                    <div>📍 🌐 Seoul, South Korea</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://2026.fossforall.org" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Netherlands">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 19 days (~1 month)</span>
+                </div>
+                <h3>ESPC</h3>
+                <div class="meta">
+                    <div>📅 Nov 30 - Dec 03, 2026</div>
+                    <div>📍 🌐 Amsterdam, Netherlands</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://www.sharepointeurope.com" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Cloud Computing and DevOps" data-country="Germany">
+                <div class="card-header">
+                    <span class="badge" style="background:#06b6d422; color:#06b6d4; border:1px solid #06b6d444;">Cloud Computing and DevOps</span>
+                    <span class="status">Starts in 19 days (~1 month)</span>
+                </div>
+                <h3>DevOpsCon Munich</h3>
+                <div class="meta">
+                    <div>📅 Nov 30 - Dec 04, 2026</div>
+                    <div>📍 🌐 Online / Virtual</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://devopscon.io/muenchen" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="U.S.A.">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 19 days (~1 month)</span>
+                </div>
+                <h3>APIConf</h3>
+                <div class="meta">
+                    <div>📅 Nov 30 - Dec 02, 2026</div>
+                    <div>📍 🌐 Online / Virtual</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://apiconf.io" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Cloud Computing and DevOps" data-country="USA">
+                <div class="card-header">
+                    <span class="badge" style="background:#06b6d422; color:#06b6d4; border:1px solid #06b6d444;">Cloud Computing and DevOps</span>
+                    <span class="status">Starts in 19 days (~1 month)</span>
+                </div>
+                <h3>AWS re:Invent 2026</h3>
+                <div class="meta">
+                    <div>📅 Nov 30 - Dec 04, 2026</div>
+                    <div>📍 🌐 Online / Virtual</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc">Amazon Web Services flagship global cloud conference covering generative AI, modern infrastructure, databases, and DevOps.</p>
+                <div class="card-footer">
+                    
+                    <span class='fee'>$2,099 (Free Virtual Keynotes)</span>
+                    <a href="https://reinvent.awsevents.com" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Cloud Computing and DevOps" data-country="France">
+                <div class="card-header">
+                    <span class="badge" style="background:#06b6d422; color:#06b6d4; border:1px solid #06b6d444;">Cloud Computing and DevOps</span>
+                    <span class="status">Starts in 20 days (~1 month)</span>
+                </div>
+                <h3>Build It Summit</h3>
+                <div class="meta">
+                    <div>📅 Dec 01-03, 2026</div>
+                    <div>📍 🌐 Paris, France</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Oct 31, 2026</div>
+                    
+                    <a href="https://builditsummit.com" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Software Engineering" data-country="Not announced">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Software Engineering</span>
+                    <span class="status">Starts in 20 days (~1 month)</span>
+                </div>
+                <h3>inside agile: Agile Leadership Conference</h3>
+                <div class="meta">
+                    <div>📅 Dec 01-02, 2026</div>
+                    <div>📍 🌐 Online / Virtual</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://alc.inside-agile.de" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="U.S.A.">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 21 days (~1 month)</span>
+                </div>
+                <h3>Tech Leader Summit</h3>
+                <div class="meta">
+                    <div>📅 Dec 02-04, 2026</div>
+                    <div>📍 🌐 Clearwater, FL, U.S.A.</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://techleadersummit.io" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="U.S.A.">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 23 days (~1 month)</span>
+                </div>
+                <h3>PyConf</h3>
+                <div class="meta">
+                    <div>📅 Dec 04-06, 2026</div>
+                    <div>📍 🌐 San Francisco, CA, U.S.A.</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Aug 31, 2026</div>
+                    
+                    <a href="https://pyconf.org" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Web and Mobile Development" data-country="Germany">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Web and Mobile Development</span>
+                    <span class="status">Starts in 23 days (~1 month)</span>
+                </div>
+                <h3>AI Coding Summit Berlin Edition</h3>
+                <div class="meta">
+                    <div>📅 Dec 04-07, 2026</div>
+                    <div>📍 🌐 Berlin, Germany</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Aug 12, 2026</div>
+                    
+                    <a href="https://aicodingsummit.com/berlin" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Web and Mobile Development" data-country="Germany">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Web and Mobile Development</span>
+                    <span class="status">Starts in 23 days (~1 month)</span>
+                </div>
+                <h3>React Day Berlin</h3>
+                <div class="meta">
+                    <div>📅 Dec 04-07, 2026</div>
+                    <div>📍 🌐 Online / Virtual</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Aug 12, 2026</div>
+                    
+                    <a href="https://reactday.berlin" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="U.S.A.">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 24 days (~1 month)</span>
+                </div>
+                <h3>DevFestMN</h3>
+                <div class="meta">
+                    <div>📅 Dec 05, 2026</div>
+                    <div>📍 🌐 Minneapolis, MN, U.S.A.</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Oct 20, 2026</div>
+                    
+                    <a href="https://devfest.mn" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="U.S.A.">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 26 days (~1 month)</span>
+                </div>
+                <h3>ArchConf</h3>
+                <div class="meta">
+                    <div>📅 Dec 07-10, 2026</div>
+                    <div>📍 🌐 Clearwater, FL, U.S.A.</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://archconf.com" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Germany">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 26 days (~1 month)</span>
+                </div>
+                <h3>IT-Tage</h3>
+                <div class="meta">
+                    <div>📅 Dec 07-10, 2026</div>
+                    <div>📍 🌐 Frankfurt am Main, Germany</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Apr 30, 2026</div>
+                    
+                    <a href="https://www.it-tage.org" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="U.S.A.">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 27 days (~1 month)</span>
+                </div>
+                <h3>Conversations Roadshow: New York by CTO Craft</h3>
+                <div class="meta">
+                    <div>📅 Dec 08-09, 2026</div>
+                    <div>📍 🌐 New York, NY, U.S.A.</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://conversations.ctocraft.com/new-york" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="India">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 28 days (~1 month)</span>
+                </div>
+                <h3>Great International AI Native Summit (GAINS)</h3>
+                <div class="meta">
+                    <div>📅 Dec 09-10, 2026</div>
+                    <div>📍 🌐 Bangalore, India</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Jul 15, 2026</div>
+                    
+                    <a href="https://ainativesummit.com" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Web and Mobile Development" data-country="U.K.">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Web and Mobile Development</span>
+                    <span class="status">Starts in 28 days (~1 month)</span>
+                </div>
+                <h3>droidcon London</h3>
+                <div class="meta">
+                    <div>📅 Dec 09-10, 2026</div>
+                    <div>📍 🌐 London, U.K.</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://london.droidcon.com" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Not announced">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 36 days</span>
+                </div>
+                <h3>AI for Developers</h3>
+                <div class="meta">
+                    <div>📅 Dec 17-18, 2026</div>
+                    <div>📍 🌐 Online / Virtual</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Jun 01, 2026</div>
+                    
+                    <a href="https://aiconference.dev" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="India">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 38 days</span>
+                </div>
+                <h3>SciPy India</h3>
+                <div class="meta">
+                    <div>📅 Dec 19-20, 2026</div>
+                    <div>📍 🌐 Chennai, India</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    
+                    
+                    <a href="https://scipy.in/2026/" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="card" data-category="Information Technology" data-country="Nepal">
+                <div class="card-header">
+                    <span class="badge" style="background:#3b82f622; color:#3b82f6; border:1px solid #3b82f644;">Information Technology</span>
+                    <span class="status">Starts in 59 days</span>
+                </div>
+                <h3>AI Conf Asia</h3>
+                <div class="meta">
+                    <div>📅 Jan 09-10, 2027</div>
+                    <div>📍 🌐 Kathmandu, Nepal</div>
+                    <div>🏢 Not announced</div>
+                </div>
+                <p class="desc"></p>
+                <div class="card-footer">
+                    <div class='cfp'>📝 CFP: Nov 01, 2026</div>
+                    
+                    <a href="https://aiconf.asia" target="_blank" rel="noopener noreferrer" class="btn">View Official Website &rarr;</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        function filterCards() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                card.style.display = text.includes(query) ? 'flex' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
+        

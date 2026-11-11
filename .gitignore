@@ -1,0 +1,78 @@
+# ==============================================================================
+# Python
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+.pytest_cache/
+.cache/
+.scheduler.lock
+
+# ==============================================================================
+# Database & Logs
+# ==============================================================================
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.log
+
+# ==============================================================================
+# Secrets & Environment
+# ==============================================================================
+.env
+.env.*
+secrets.yaml
+credentials.json
+
+# ==============================================================================
+# OS & IDEs
+# ==============================================================================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ==============================================================================
+# Android & Gradle
+# ==============================================================================
+.gradle/
+android_app/.gradle/
+android_app/build/
+android_app/*/build/
+android_app/**/build/
+android_app/local.properties
+android_app/.kotlin/
+android_app/.idea/
+android_app/*.iml
+android_app/captures/
+android_app/.cxx/
+android_app/.externalNativeBuild/

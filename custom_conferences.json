@@ -1,0 +1,41 @@
+[
+  {
+    "name": "AWS re:Invent 2026",
+    "topic": "Cloud Computing and DevOps",
+    "startDate": "2026-11-30",
+    "endDate": "2026-12-04",
+    "city": "Las Vegas, NV",
+    "country": "USA",
+    "online": true,
+    "url": "https://reinvent.awsevents.com",
+    "description": "Amazon Web Services flagship global cloud conference covering generative AI, modern infrastructure, databases, and DevOps.",
+    "fee_type": "paid",
+    "fee_amount": "$2,099 (Free Virtual Keynotes)"
+  },
+  {
+    "name": "Google I/O Connect Asia 2027",
+    "topic": "Artificial Intelligence and Machine Learning",
+    "startDate": "2027-05-18",
+    "endDate": "2027-05-20",
+    "city": "Manila",
+    "country": "Philippines",
+    "online": true,
+    "url": "https://io.google",
+    "description": "Google developer conference showcasing Gemini AI, Android 16, Flutter, Web technologies, and cloud developer tools.",
+    "fee_type": "free",
+    "fee_amount": "Free (Registration required)"
+  },
+  {
+    "name": "PhilSec - Cybersecurity Philippines Summit 2026",
+    "topic": "Cybersecurity",
+    "startDate": "2026-12-08",
+    "endDate": "2026-12-09",
+    "city": "Pasay City, Metro Manila",
+    "country": "Philippines",
+    "online": false,
+    "url": "https://philsec.com",
+    "description": "National conference and exhibition focusing on cyber threat intelligence, zero trust architecture, and critical national infrastructure defense.",
+    "fee_type": "free",
+    "fee_amount": "Free admission for IT professionals"
+  }
+]

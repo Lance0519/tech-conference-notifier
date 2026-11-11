@@ -1,0 +1,27 @@
+# IT & Tech Conference Automated Notifier System
+# Core Production & Development Dependencies
+
+# Networking and HTTP Fetchers
+requests>=2.31.0
+
+# Configuration Management
+PyYAML>=6.0.1
+
+# Scheduling & Autonomous Daemon
+schedule>=1.2.0
+
+# Windows Desktop Toast Notifications
+windows-toasts>=1.3.0
+
+# Mobile Web PWA Backend & REST API
+Flask>=3.0.0
+Flask-Cors>=4.0.0
+
+# Database ORM & Storage Engine
+SQLAlchemy>=2.0.0
+
+# Templating Engine
+Jinja2>=3.1.2
+
+# Testing & Quality Assurance
+pytest>=8.0.0
