@@ -225,7 +225,10 @@ class DigestNotifier(BaseNotifier):
 <body>
     <div class="container">
         <header>
-            <h1>🔔 Upcoming IT, Computer Science & Tech Conferences</h1>
+            <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:8px;">
+                <img src="static/logo.jpg" alt="Logo" style="width:48px; height:48px; border-radius:12px; border:2px solid var(--accent); object-fit:cover;">
+                <h1 style="margin:0;">Upcoming IT, Computer Science & Tech Conferences</h1>
+            </div>
             <p style="color:var(--text-muted);">Discovered automatically &bull; Last updated {now_str}</p>
         </header>
         <div class="search-bar">

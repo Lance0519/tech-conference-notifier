@@ -1,5 +1,5 @@
 # 🔔 Upcoming IT, Computer Science & Technology Conferences
-*Generated on November 11, 2026 12:30 PM*
+*Generated on November 11, 2026 12:59 PM*
 
 | Event Name | Category | Date | Location | Format | Status | Official Link |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |

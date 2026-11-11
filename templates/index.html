@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Tech Conferences & Conventions Notifier</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="apple-touch-icon" href="/static/icon-192.png">
     <link rel="manifest" href="/static/manifest.json">
     <meta name="theme-color" content="#0f172a">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -67,6 +69,14 @@
             font-size: 17px;
             color: var(--accent);
             letter-spacing: -0.3px;
+        }
+
+        .header-logo-img {
+            width: 28px;
+            height: 28px;
+            border-radius: 7px;
+            object-fit: cover;
+            border: 1px solid var(--accent);
         }
 
         .sync-btn {
@@ -434,7 +444,7 @@
     <header>
         <div class="header-top">
             <div class="logo">
-                <span>🔔</span>
+                <img src="/static/logo.jpg" alt="Logo" class="header-logo-img">
                 <span>TechConf Alert</span>
             </div>
             <div style="display:flex; gap:8px; align-items:center;">
@@ -501,7 +511,13 @@
         <!-- Tab 4: Notifications & Info -->
         <section id="tabAlerts" style="display:none;">
             <div style="background:var(--surface); border:1px solid var(--accent); border-radius:14px; padding:16px; margin-bottom:20px;">
-                <div style="font-weight:bold; font-size:16px; color:var(--text); margin-bottom:4px;">📱 Standalone Android App</div>
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px;">
+                    <img src="/static/logo.jpg" alt="Logo" style="width:44px; height:44px; border-radius:10px; border:1px solid var(--accent); object-fit:cover;">
+                    <div>
+                        <div style="font-weight:bold; font-size:16px; color:var(--text);">TechConf Notifier Android</div>
+                        <div style="font-size:12px; color:var(--accent);">Standalone APK • Wi-Fi Only</div>
+                    </div>
+                </div>
                 <div style="font-size:13px; color:var(--text-muted); line-height:1.4;">
                     Runs 100% independently on your Android phone with only Wi-Fi needed. No PC or terminal required!
                 </div>

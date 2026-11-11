@@ -1,7 +1,7 @@
 # 🌐 IT & Tech Conference Automated Notifier System
 
 <p align="center">
-  <img src="app_logo.jpg" alt="TechConf Notifier Logo" width="160" style="border-radius: 28px;" />
+  <img src="logo.jpg" alt="TechConf Notifier Logo" width="160" style="border-radius: 28px;" />
 </p>
 
 An enterprise-grade, autonomous discovery, classification, and notification platform for Information Technology, Computer Science, and Software Engineering conventions, summits, and academic conferences.
