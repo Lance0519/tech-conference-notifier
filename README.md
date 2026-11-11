@@ -1,5 +1,9 @@
 # 🌐 IT & Tech Conference Automated Notifier System
 
+<p align="center">
+  <img src="app_logo.jpg" alt="TechConf Notifier Logo" width="160" style="border-radius: 28px;" />
+</p>
+
 An enterprise-grade, autonomous discovery, classification, and notification platform for Information Technology, Computer Science, and Software Engineering conventions, summits, and academic conferences.
 
 Anchored to the **Asia/Manila (UTC+8)** timezone, the system continuously aggregates events worldwide—with top priority given to Philippine local gatherings—eliminates noise through intelligent disambiguation, and delivers timely alerts to mobile devices, Windows desktop toasts, Discord, Telegram, Email, and formatted visual digests.
