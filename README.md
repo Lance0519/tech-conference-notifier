@@ -6,8 +6,32 @@ Anchored to the **Asia/Manila (UTC+8)** timezone, the system continuously aggreg
 
 ---
 
+## 📱 Download Android Mobile App (Standalone APK)
+
+You can run the IT & Tech Conference Notifier directly on your Android phone **independently with only Wi-Fi needed** — no PC or Python server required!
+
+[![Download Android APK](https://img.shields.io/badge/Download-Android%20APK%20(12.6%20MB)-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/Lance0519/tech-conference-notifier/raw/main/TechConfNotifier.apk)
+
+### 📥 Direct Download Links:
+- 📲 **[Download TechConfNotifier.apk (Direct from GitHub)](https://github.com/Lance0519/tech-conference-notifier/raw/main/TechConfNotifier.apk)** *(12.6 MB)*
+- 🌐 **Web PWA Direct Download**: Launch `.\run_mobile_app.bat` and click **"📲 Get APK"** in the top navigation bar or navigate to `http://localhost:5000/download/apk`.
+- ⚡ **One-Click USB/ADB Install** (if phone is connected to PC):
+  ```cmd
+  .\install_apk_to_phone.bat
+  ```
+
+### 📋 How to Install on Your Android Phone:
+1. Tap the **[Download TechConfNotifier.apk](https://github.com/Lance0519/tech-conference-notifier/raw/main/TechConfNotifier.apk)** link from your phone's browser (Chrome/Samsung Internet) or transfer the file via USB/Google Drive.
+2. Open your phone's **Downloads** folder or notification drawer and tap **`TechConfNotifier.apk`**.
+3. If Android shows a prompt saying *"For your security, your phone is not allowed to install unknown apps from this source"*, tap **Settings** and toggle **"Allow from this source"** to **ON**.
+4. Tap **Install** and then **Open**.
+5. **Done!** The app launches immediately with 59 pre-bundled verified Philippine and global tech conferences. It runs standalone background auto-syncs every 12 hours over Wi-Fi and dispatches native Android push notifications for upcoming events!
+
+---
+
 ## 📑 Table of Contents
 
+- [Download Android App](#-download-android-mobile-app-standalone-apk)
 - [System Architecture](#-system-architecture)
 - [Key Features](#-key-features)
   - [1. Mobile App & Web PWA](#1-mobile-app--web-pwa)

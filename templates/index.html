@@ -89,6 +89,27 @@
             background: var(--surface-hover);
         }
 
+        .apk-download-btn {
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.2s;
+        }
+
+        .apk-download-btn:active {
+            transform: scale(0.96);
+            background: var(--accent);
+            color: #090d16;
+        }
+
         /* Search & Filter Bar */
         .search-container {
             position: relative;
@@ -416,10 +437,16 @@
                 <span>🔔</span>
                 <span>TechConf Alert</span>
             </div>
-            <button class="sync-btn" onclick="syncNow()">
-                <span id="syncSpinner">🔄</span>
-                <span>Sync Now</span>
-            </button>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <a href="/download/apk" class="apk-download-btn" title="Download Standalone Android APK">
+                    <span>📲</span>
+                    <span>Get APK</span>
+                </a>
+                <button class="sync-btn" onclick="syncNow()">
+                    <span id="syncSpinner">🔄</span>
+                    <span>Sync</span>
+                </button>
+            </div>
         </div>
 
         <div class="search-container" id="searchContainer">
@@ -473,6 +500,21 @@
 
         <!-- Tab 4: Notifications & Info -->
         <section id="tabAlerts" style="display:none;">
+            <div style="background:var(--surface); border:1px solid var(--accent); border-radius:14px; padding:16px; margin-bottom:20px;">
+                <div style="font-weight:bold; font-size:16px; color:var(--text); margin-bottom:4px;">📱 Standalone Android App</div>
+                <div style="font-size:13px; color:var(--text-muted); line-height:1.4;">
+                    Runs 100% independently on your Android phone with only Wi-Fi needed. No PC or terminal required!
+                </div>
+                <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+                    <a href="/download/apk" class="btn-action btn-primary" style="flex:1; text-align:center; padding:10px 14px; border-radius:10px; font-weight:600; text-decoration:none; display:inline-block;">
+                        📥 Download TechConfNotifier.apk (12.6 MB)
+                    </a>
+                    <a href="https://github.com/Lance0519/tech-conference-notifier/raw/main/TechConfNotifier.apk" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="padding:10px 14px; border-radius:10px; font-weight:600; text-decoration:none; display:inline-block;">
+                        GitHub Direct
+                    </a>
+                </div>
+            </div>
+
             <div class="section-title">
                 <span>Notification Center & History</span>
             </div>

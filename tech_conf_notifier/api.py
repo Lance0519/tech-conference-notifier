@@ -49,6 +49,24 @@ def service_worker():
     return send_file(STATIC_DIR / "sw.js", mimetype="application/javascript")
 
 
+@app.route("/download/apk", methods=["GET"])
+@app.route("/api/download/apk", methods=["GET"])
+def download_apk():
+    """Serve the compiled standalone Android APK directly to mobile downloaders."""
+    apk_path = BASE_DIR / "TechConfNotifier.apk"
+    if not apk_path.exists():
+        apk_path = BASE_DIR / "android_app" / "app" / "build" / "outputs" / "apk" / "debug" / "app-debug.apk"
+
+    if apk_path.exists():
+        return send_file(
+            str(apk_path),
+            as_attachment=True,
+            download_name="TechConfNotifier.apk",
+            mimetype="application/vnd.android.package-archive"
+        )
+    return jsonify({"status": "error", "message": "APK file not found on server"}), 404
+
+
 @app.route("/api/events", methods=["GET"])
 def get_events():
     """Retrieve upcoming conferences matching mobile query filters."""
