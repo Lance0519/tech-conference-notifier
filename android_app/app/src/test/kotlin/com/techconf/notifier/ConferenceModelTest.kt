@@ -73,4 +73,25 @@ class ConferenceModelTest {
         )
         assertEquals("Tomorrow", tomorrowConf.displayCountdownBadge)
     }
+
+    @Test
+    fun testStudentFriendlyEligibility() {
+        val conf = Conference(
+            id = "conf_student",
+            name = "GDG DevFest Manila",
+            startDate = "2026-12-12"
+        )
+        assertTrue(conf.isStudentFriendly)
+        assertEquals("Open to Students & Professionals (Student-Friendly)", conf.eligibility)
+        assertTrue(conf.targetAudiences.contains("Students"))
+
+        val json = conf.toJson()
+        assertEquals("Open to Students & Professionals (Student-Friendly)", json.getString("eligibility"))
+        assertTrue(json.getBoolean("is_student_friendly"))
+
+        val parsed = Conference.fromJson(json)
+        assertTrue(parsed.isStudentFriendly)
+        assertEquals("Open to Students & Professionals (Student-Friendly)", parsed.eligibility)
+        assertTrue(parsed.targetAudiences.contains("Students"))
+    }
 }

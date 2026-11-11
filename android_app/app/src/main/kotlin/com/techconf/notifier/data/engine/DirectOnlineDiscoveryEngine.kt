@@ -165,6 +165,9 @@ class DirectOnlineDiscoveryEngine(private val context: Context) {
             cfpUrl = cfpUrl,
             cfpDeadline = cfpEndDate,
             hasCfpOpen = !cfpEndDate.isNullOrBlank(),
+            targetAudiences = listOf("Developers", "Students"),
+            eligibility = "Open to Students & Professionals (Student-Friendly)",
+            isStudentFriendly = true,
             verificationStatus = "verified",
             status = "scheduled"
         )

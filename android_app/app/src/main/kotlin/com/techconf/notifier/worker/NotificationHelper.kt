@@ -82,8 +82,8 @@ object NotificationHelper {
         }
 
         val locationText = if (conference.isPhilippines) "🇵🇭 ${conference.locationStr}" else conference.locationStr
-        val bodyText = "${conference.formattedDate} • $locationText\nCategory: ${conference.category}"
-        val expandedText = "$bodyText\n\n${conference.description}"
+        val bodyText = "${conference.formattedDate} • $locationText • 🎓 Student-Friendly\nCategory: ${conference.category}"
+        val expandedText = "$bodyText\n\nEligibility: Student-Friendly (Open to Students & Professionals)\n\n${conference.description}"
 
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
 

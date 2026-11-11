@@ -32,6 +32,7 @@
     "verification_status": "verified",
     "confidence_score": 0.57,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -52,7 +53,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "SpiceWorld",
@@ -87,6 +90,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -107,7 +111,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "CMS Conf",
@@ -142,6 +148,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -162,7 +169,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "Tokyo Test Fest",
@@ -197,6 +206,7 @@
     "verification_status": "verified",
     "confidence_score": 0.57,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -217,7 +227,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "Ubuntu Summit",
@@ -252,6 +264,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -272,7 +285,9 @@
     "is_online": true,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "VIC AI Boom",
@@ -307,6 +322,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -327,7 +343,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "NextGen Intelligence Conference: Data, Cloud & AI",
@@ -362,6 +380,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -382,7 +401,9 @@
     "is_online": true,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "Software Architecture Gathering",
@@ -417,6 +438,7 @@
     "verification_status": "verified",
     "confidence_score": 0.7,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -437,7 +459,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "API Conference Berlin",
@@ -472,6 +496,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers"
     ],
     "sources": [
@@ -491,7 +516,9 @@
     "is_online": true,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "AI Engineering Summit",
@@ -526,6 +553,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -546,7 +574,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "MLCon Berlin",
@@ -581,6 +611,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -601,7 +632,9 @@
     "is_online": true,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "VibeKode Berlin",
@@ -636,6 +669,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -656,7 +690,9 @@
     "is_online": true,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "HalfStack Vienna",
@@ -691,6 +727,7 @@
     "verification_status": "verified",
     "confidence_score": 0.57,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -711,7 +748,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "AI Coding Summit New York Edition",
@@ -746,6 +785,7 @@
     "verification_status": "verified",
     "confidence_score": 0.57,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -766,7 +806,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "JSNation US",
@@ -801,6 +843,7 @@
     "verification_status": "verified",
     "confidence_score": 0.57,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -821,7 +864,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "Agile Testing Days",
@@ -856,6 +901,7 @@
     "verification_status": "verified",
     "confidence_score": 0.97,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -876,7 +922,9 @@
     "is_online": true,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "CCS 2026",
@@ -911,6 +959,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Researchers",
       "Developers"
     ],
@@ -931,7 +980,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "XtremePython Online Conference",
@@ -966,6 +1017,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -986,7 +1038,9 @@
     "is_online": true,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "React Summit US",
@@ -1021,6 +1075,7 @@
     "verification_status": "verified",
     "confidence_score": 0.77,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -1041,7 +1096,9 @@
     "is_online": true,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "betterCode() .NET 11.0",
@@ -1076,6 +1133,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers"
     ],
     "sources": [
@@ -1095,7 +1153,9 @@
     "is_online": true,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "Open Source Monitoring conference",
@@ -1130,6 +1190,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -1150,7 +1211,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "Community Over Code Sydney",
@@ -1185,6 +1248,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers"
     ],
     "sources": [
@@ -1204,7 +1268,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "ASF Community Over Code / ChurConf",
@@ -1239,6 +1305,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers"
     ],
     "sources": [
@@ -1258,7 +1325,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "X-Ops Conference Madrid",
@@ -1293,6 +1362,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -1313,7 +1383,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "Agentic Engineering Days Zurich",
@@ -1348,6 +1420,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -1368,7 +1441,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "droidCon India",
@@ -1403,6 +1478,7 @@
     "verification_status": "verified",
     "confidence_score": 0.57,
     "target_audiences": [
+      "Students",
       "IT Executives"
     ],
     "sources": [
@@ -1422,7 +1498,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "DEVCON Summit Philippines 2026",
@@ -1478,7 +1556,9 @@
     "is_online": false,
     "is_philippines": true,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "flutterCon India",
@@ -1513,6 +1593,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -1533,7 +1614,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "XtremeAI Online Conference",
@@ -1568,6 +1651,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -1588,7 +1672,9 @@
     "is_online": true,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "Big Data Europe",
@@ -1623,6 +1709,7 @@
     "verification_status": "verified",
     "confidence_score": 0.7,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -1643,7 +1730,9 @@
     "is_online": true,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": true
+    "has_cfp_open": true,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "AI World Congress",
@@ -1678,6 +1767,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -1698,7 +1788,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "WeAreDevelopers Conference India",
@@ -1733,6 +1825,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers"
     ],
     "sources": [
@@ -1752,7 +1845,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "ROOTCON 20 2026",
@@ -1787,6 +1882,7 @@
     "verification_status": "verified",
     "confidence_score": 0.95,
     "target_audiences": [
+      "Students",
       "Developers",
       "Researchers",
       "IT Executives"
@@ -1808,7 +1904,9 @@
     "is_online": true,
     "is_philippines": true,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "EdTech Conference",
@@ -1843,6 +1941,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -1863,7 +1962,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "Workplace Ninjas India",
@@ -1898,6 +1999,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -1918,7 +2020,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "FOSS for All Conference",
@@ -1953,6 +2057,7 @@
     "verification_status": "verified",
     "confidence_score": 0.57,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -1973,7 +2078,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "Philippine National IT Conference (NITC) 2026",
@@ -2029,7 +2136,9 @@
     "is_online": true,
     "is_philippines": true,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "ESPC",
@@ -2064,6 +2173,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -2084,7 +2194,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "DevOpsCon Munich",
@@ -2119,6 +2231,7 @@
     "verification_status": "verified",
     "confidence_score": 0.57,
     "target_audiences": [
+      "Students",
       "Developers"
     ],
     "sources": [
@@ -2138,7 +2251,9 @@
     "is_online": true,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "APIConf",
@@ -2173,6 +2288,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers"
     ],
     "sources": [
@@ -2192,7 +2308,9 @@
     "is_online": true,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "AWS re:Invent 2026",
@@ -2227,6 +2345,7 @@
     "verification_status": "unverified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers"
     ],
     "sources": [],
@@ -2241,7 +2360,9 @@
     "is_online": true,
     "is_philippines": false,
     "is_free": true,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "Build It Summit",
@@ -2276,6 +2397,7 @@
     "verification_status": "verified",
     "confidence_score": 0.57,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -2296,7 +2418,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "inside agile: Agile Leadership Conference",
@@ -2331,6 +2455,7 @@
     "verification_status": "verified",
     "confidence_score": 0.9,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -2351,7 +2476,9 @@
     "is_online": true,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "Tech Leader Summit",
@@ -2386,6 +2513,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -2406,7 +2534,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "PSIA SOFTCON 2026",
@@ -2441,6 +2571,7 @@
     "verification_status": "verified",
     "confidence_score": 0.95,
     "target_audiences": [
+      "Students",
       "IT Executives",
       "Developers"
     ],
@@ -2461,7 +2592,9 @@
     "is_online": false,
     "is_philippines": true,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "PyConf",
@@ -2496,6 +2629,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -2516,7 +2650,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "AI Coding Summit Berlin Edition",
@@ -2551,6 +2687,7 @@
     "verification_status": "verified",
     "confidence_score": 0.57,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -2571,7 +2708,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "React Day Berlin",
@@ -2606,6 +2745,7 @@
     "verification_status": "verified",
     "confidence_score": 0.77,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -2626,7 +2766,9 @@
     "is_online": true,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "DevFestMN",
@@ -2661,6 +2803,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers"
     ],
     "sources": [
@@ -2680,7 +2823,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "ArchConf",
@@ -2715,6 +2860,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -2735,7 +2881,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "IT-Tage",
@@ -2770,6 +2918,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -2790,7 +2939,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "Conversations Roadshow: New York by CTO Craft",
@@ -2825,6 +2976,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "IT Executives"
     ],
     "sources": [
@@ -2844,7 +2996,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "PhilSec - Cybersecurity Philippines Summit 2026",
@@ -2879,6 +3033,7 @@
     "verification_status": "unverified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers"
     ],
     "sources": [],
@@ -2893,7 +3048,9 @@
     "is_online": false,
     "is_philippines": true,
     "is_free": true,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "Great International AI Native Summit (GAINS)",
@@ -2928,6 +3085,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -2948,7 +3106,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "droidcon London",
@@ -2983,6 +3143,7 @@
     "verification_status": "verified",
     "confidence_score": 0.57,
     "target_audiences": [
+      "Students",
       "IT Executives"
     ],
     "sources": [
@@ -3002,7 +3163,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "GDG DevFest Manila 2026",
@@ -3057,7 +3220,9 @@
     "is_online": false,
     "is_philippines": true,
     "is_free": true,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "AI for Developers",
@@ -3092,6 +3257,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers"
     ],
     "sources": [
@@ -3111,7 +3277,9 @@
     "is_online": true,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "SciPy India",
@@ -3146,6 +3314,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -3166,7 +3335,9 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   },
   {
     "name": "AI Conf Asia",
@@ -3201,6 +3372,7 @@
     "verification_status": "verified",
     "confidence_score": 0.5,
     "target_audiences": [
+      "Students",
       "Developers",
       "General Public"
     ],
@@ -3221,6 +3393,8 @@
     "is_online": false,
     "is_philippines": false,
     "is_free": false,
-    "has_cfp_open": false
+    "has_cfp_open": false,
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true
   }
 ]

@@ -237,3 +237,15 @@ class TestConferenceModel:
         assert conf.category == "Cybersecurity"
         assert conf.format == "virtual"
         assert conf.start_date == date(2026, 12, 10)
+
+    def test_student_friendly_and_eligibility(self):
+        conf = Conference(name="Student Friendly Summit")
+        assert conf.is_student_friendly is True
+        assert "Student-Friendly" in conf.eligibility
+        d = conf.to_dict()
+        assert d["is_student_friendly"] is True
+        assert d["eligibility"] == conf.eligibility
+
+        rebuilt = Conference.from_dict(d)
+        assert rebuilt.is_student_friendly is True
+        assert rebuilt.eligibility == conf.eligibility

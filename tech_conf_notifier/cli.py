@@ -392,9 +392,10 @@ def cmd_list(args: argparse.Namespace) -> int:
     ph_count = sum(1 for e in events if e.is_philippines)
     online_count = sum(1 for e in events if e.is_online)
     cfp_count = sum(1 for e in events if e.has_cfp_open)
+    student_count = sum(1 for e in events if e.is_student_friendly or "Students" in e.target_audiences)
 
-    print(f"\n  Summary: {len(events)} total conferences | {ph_count} Philippines [PH] | "
-          f"{online_count} Online/Hybrid | {cfp_count} Open CFP")
+    print(f"\n  Summary: {len(events)} total conferences | {student_count} Student-Friendly 🎓 | "
+          f"{ph_count} Philippines [PH] | {online_count} Online/Hybrid | {cfp_count} Open CFP")
     print("=" * 90 + "\n")
     return 0
 

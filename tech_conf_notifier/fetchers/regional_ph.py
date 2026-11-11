@@ -26,7 +26,9 @@ REGIONAL_PH_SEEDS = [
         "description": "The biggest developer conference in the Philippines bringing together 2,000+ tech leaders, software engineers, and innovators.",
         "fee_type": "paid",
         "fee_amount": "₱1,500 - ₱3,500 (Student discounts available)",
-        "target_audiences": ["Developers", "Students", "IT Executives"]
+        "target_audiences": ["Developers", "Students", "IT Executives"],
+        "eligibility": "Open to Students & Professionals (Student-Friendly)",
+        "is_student_friendly": True
     },
     {
         "name": "ROOTCON 20 2026",
@@ -42,8 +44,10 @@ REGIONAL_PH_SEEDS = [
         "url": "https://www.rootcon.org",
         "description": "The premier information security and hacking conference in the Philippines featuring hands-on villages, capture the flag, and cutting-edge security research.",
         "fee_type": "paid",
-        "fee_amount": "₱4,500 - ₱12,000",
-        "target_audiences": ["Developers", "Researchers", "IT Executives"]
+        "fee_amount": "₱4,500 - ₱12,000 (Student & academic passes available)",
+        "target_audiences": ["Developers", "Students", "Researchers", "IT Executives"],
+        "eligibility": "Open to Students & Professionals (Student-Friendly)",
+        "is_student_friendly": True
     },
     {
         "name": "PSIA SOFTCON 2026",
@@ -59,8 +63,10 @@ REGIONAL_PH_SEEDS = [
         "url": "https://www.psia.org.ph",
         "description": "The annual software conference showcasing digital transformation, enterprise architecture, cloud computing, and AI in the software industry.",
         "fee_type": "paid",
-        "fee_amount": "₱5,000 - ₱9,000",
-        "target_audiences": ["IT Executives", "Developers"]
+        "fee_amount": "₱5,000 - ₱9,000 (Student delegate slots supported)",
+        "target_audiences": ["IT Executives", "Developers", "Students"],
+        "eligibility": "Open to Students & Professionals (Student-Friendly)",
+        "is_student_friendly": True
     },
     {
         "name": "PyCon Philippines 2027",
@@ -76,8 +82,10 @@ REGIONAL_PH_SEEDS = [
         "url": "https://pycon.python.ph",
         "description": "Annual gathering of the Python programming community in the Philippines covering Web, Data Science, AI, Automation, and DevOps.",
         "fee_type": "paid",
-        "fee_amount": "₱1,200 - ₱2,800",
-        "target_audiences": ["Developers", "Students", "Researchers"]
+        "fee_amount": "₱1,200 - ₱2,800 (Special student tier available)",
+        "target_audiences": ["Developers", "Students", "Researchers"],
+        "eligibility": "Open to Students & Professionals (Student-Friendly)",
+        "is_student_friendly": True
     },
     {
         "name": "Philippine National IT Conference (NITC) 2026",
@@ -93,8 +101,10 @@ REGIONAL_PH_SEEDS = [
         "url": "https://philippinecomputersociety.org",
         "description": "The national convention of IT professionals, academics, and government leaders addressing cybersecurity, national IT infrastructure, and digital government.",
         "fee_type": "paid",
-        "fee_amount": "₱2,500 - ₱4,500",
-        "target_audiences": ["IT Executives", "Researchers", "Students"]
+        "fee_amount": "₱2,500 - ₱4,500 (Student/Faculty discount rate)",
+        "target_audiences": ["IT Executives", "Researchers", "Students"],
+        "eligibility": "Open to Students & Professionals (Student-Friendly)",
+        "is_student_friendly": True
     },
     {
         "name": "GDG DevFest Manila 2026",
@@ -110,8 +120,10 @@ REGIONAL_PH_SEEDS = [
         "url": "https://gdg.community.dev/gdg-manila/",
         "description": "Community-led developer festival covering Android, Flutter, Cloud, Gemini API, and Machine Learning.",
         "fee_type": "free",
-        "fee_amount": "Free (Registration required)",
-        "target_audiences": ["Developers", "Students"]
+        "fee_amount": "Free (Open to Students & Professionals)",
+        "target_audiences": ["Developers", "Students"],
+        "eligibility": "Open to Students & Professionals (Student-Friendly)",
+        "is_student_friendly": True
     },
     {
         "name": "AWS Community Day Philippines 2027",
@@ -127,8 +139,10 @@ REGIONAL_PH_SEEDS = [
         "url": "https://awsug.ph",
         "description": "Community-driven AWS event featuring deep dives into cloud architecture, serverless, Kubernetes, and generative AI on AWS.",
         "fee_type": "paid",
-        "fee_amount": "₱500 - ₱1,200",
-        "target_audiences": ["Developers", "IT Executives"]
+        "fee_amount": "₱500 - ₱1,200 (Student discount tickets available)",
+        "target_audiences": ["Developers", "Students", "IT Executives"],
+        "eligibility": "Open to Students & Professionals (Student-Friendly)",
+        "is_student_friendly": True
     },
     {
         "name": "FOSSASIA Summit Singapore 2027",
@@ -144,8 +158,10 @@ REGIONAL_PH_SEEDS = [
         "url": "https://summit.fossasia.org",
         "description": "Asia's premier Open Source summit showcasing open hardware, AI, cloud computing, Linux, and developer tools.",
         "fee_type": "paid",
-        "fee_amount": "$50 - $180 USD (Free virtual track)",
-        "target_audiences": ["Developers", "Students", "Researchers"]
+        "fee_amount": "$50 - $180 USD (Free virtual track & student discounts)",
+        "target_audiences": ["Developers", "Students", "Researchers"],
+        "eligibility": "Open to Students & Professionals (Student-Friendly)",
+        "is_student_friendly": True
     }
 ]
 
@@ -191,7 +207,9 @@ class RegionalPHFetcher(BaseFetcher):
                     status="scheduled",
                     verification_status="verified",
                     confidence_score=0.95,
-                    target_audiences=item.get("target_audiences", ["Developers"]),
+                    target_audiences=item.get("target_audiences", ["Developers", "Students"]),
+                    eligibility=item.get("eligibility", "Open to Students & Professionals (Student-Friendly)"),
+                    is_student_friendly=item.get("is_student_friendly", True),
                     sources=[{"source_name": "Regional PH Registry", "url": item.get("url")}]
                 )
                 conferences.append(conf)

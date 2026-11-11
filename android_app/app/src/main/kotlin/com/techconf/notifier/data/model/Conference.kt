@@ -55,7 +55,9 @@ data class Conference(
     val status: String = "scheduled", // scheduled, ongoing, postponed, rescheduled, cancelled, completed
     val verificationStatus: String = "unverified", // verified, provisional, unverified, dead_link
     val confidenceScore: Double = 0.5,
-    val targetAudiences: List<String> = listOf("Developers"),
+    val targetAudiences: List<String> = listOf("Developers", "Students"),
+    val eligibility: String = "Open to Students & Professionals (Student-Friendly)",
+    val isStudentFriendly: Boolean = true,
     val locationStr: String = "",
     val formattedDate: String = "",
     val daysUntil: Int = 0,
@@ -126,6 +128,8 @@ data class Conference(
         obj.put("verification_status", verificationStatus)
         obj.put("confidence_score", confidenceScore)
         obj.put("target_audiences", JSONArray(targetAudiences))
+        obj.put("eligibility", eligibility)
+        obj.put("is_student_friendly", isStudentFriendly)
         obj.put("location_str", locationStr)
         obj.put("formatted_date", formattedDate)
         obj.put("days_until", daysUntil)
@@ -157,6 +161,13 @@ data class Conference(
             }
             if (audiences.isEmpty()) {
                 audiences.add("Developers")
+                audiences.add("Students")
+            }
+
+            val isStudentVal = json.optBoolean("is_student_friendly", true)
+            val eligVal = json.optString("eligibility", "Open to Students & Professionals (Student-Friendly)")
+            if (isStudentVal && !audiences.contains("Students")) {
+                audiences.add("Students")
             }
 
             val formatVal = json.optString("format", "in_person")
@@ -197,6 +208,8 @@ data class Conference(
                 verificationStatus = json.optString("verification_status", "unverified"),
                 confidenceScore = json.optDouble("confidence_score", 0.5),
                 targetAudiences = audiences,
+                eligibility = eligVal,
+                isStudentFriendly = isStudentVal,
                 locationStr = json.optString("location_str", ""),
                 formattedDate = json.optString("formatted_date", ""),
                 daysUntil = json.optInt("days_until", 0),

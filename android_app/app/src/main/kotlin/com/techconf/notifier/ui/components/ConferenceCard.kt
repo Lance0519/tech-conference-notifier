@@ -56,6 +56,8 @@ import com.techconf.notifier.ui.theme.StatusCfpOpen
 import com.techconf.notifier.ui.theme.StatusCfpOpenBg
 import com.techconf.notifier.ui.theme.StatusNormal
 import com.techconf.notifier.ui.theme.StatusNormalBg
+import com.techconf.notifier.ui.theme.StatusStudentFriendly
+import com.techconf.notifier.ui.theme.StatusStudentFriendlyBg
 import com.techconf.notifier.ui.theme.StatusUrgent
 import com.techconf.notifier.ui.theme.StatusUrgentBg
 import com.techconf.notifier.ui.theme.StatusWarning
@@ -103,6 +105,11 @@ fun ConferenceCard(
 
                 // Format Badge
                 FormatBadge(format = conference.format)
+
+                // Student Friendly Badge
+                if (conference.isStudentFriendly) {
+                    StudentFriendlyBadge()
+                }
 
                 // CFP Open Badge
                 if (conference.hasCfpOpen) {
@@ -157,6 +164,24 @@ fun ConferenceCard(
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
+                )
+            }
+
+            // Student Eligibility Row
+            Spacer(modifier = Modifier.height(4.dp))
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "🎓",
+                    fontSize = 13.sp
+                )
+                Spacer(modifier = Modifier.width(6.dp))
+                Text(
+                    text = "Eligibility: Student-Friendly • Students & Pros",
+                    style = MaterialTheme.typography.bodySmall,
+                    fontWeight = FontWeight.SemiBold,
+                    color = StatusStudentFriendly
                 )
             }
 
@@ -309,6 +334,22 @@ fun FormatBadge(format: String) {
 }
 
 @Composable
+fun StudentFriendlyBadge() {
+    Surface(
+        color = StatusStudentFriendlyBg,
+        shape = RoundedCornerShape(8.dp)
+    ) {
+        Text(
+            text = "🎓 Student Friendly",
+            color = StatusStudentFriendly,
+            style = MaterialTheme.typography.labelSmall,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+        )
+    }
+}
+
+@Composable
 fun CfpBadge() {
     Surface(
         color = StatusCfpOpenBg,
@@ -401,6 +442,70 @@ fun ConferenceDetailDialog(
                     style = MaterialTheme.typography.bodyMedium
                 )
 
+                Spacer(modifier = Modifier.height(10.dp))
+
+                // Eligibility & Audience Section
+                Text(
+                    text = "🎓 Eligibility & Target Audience",
+                    style = MaterialTheme.typography.labelLarge,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.primary
+                )
+                Spacer(modifier = Modifier.height(4.dp))
+                Surface(
+                    color = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.35f),
+                    shape = RoundedCornerShape(10.dp),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Column(modifier = Modifier.padding(10.dp)) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Text(text = "✅ ", fontSize = 13.sp)
+                            Text(
+                                text = "Student-Friendly (Not for Professionals Only)",
+                                style = MaterialTheme.typography.bodyMedium,
+                                fontWeight = FontWeight.Bold,
+                                color = MaterialTheme.colorScheme.onPrimaryContainer
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Text(
+                            text = "Senior high & college students, undergraduate/graduate researchers, self-taught developers, and beginners are warmly eligible and welcome to attend alongside industry professionals! Look out for discounted student passes, volunteer slots, and academic project showcases.",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                        Spacer(modifier = Modifier.height(6.dp))
+                        FlowRow(
+                            horizontalArrangement = Arrangement.spacedBy(6.dp),
+                            verticalArrangement = Arrangement.spacedBy(4.dp)
+                        ) {
+                            val audienceList = if (conference.targetAudiences.contains("Students")) {
+                                conference.targetAudiences
+                            } else {
+                                listOf("Students") + conference.targetAudiences
+                            }
+                            audienceList.forEach { audience ->
+                                Surface(
+                                    color = MaterialTheme.colorScheme.surface,
+                                    shape = RoundedCornerShape(6.dp)
+                                ) {
+                                    Text(
+                                        text = when (audience.lowercase()) {
+                                            "students" -> "🎓 Students"
+                                            "developers" -> "💻 Developers"
+                                            "researchers" -> "🔬 Researchers"
+                                            "it executives" -> "👔 IT Executives"
+                                            else -> "👥 $audience"
+                                        },
+                                        style = MaterialTheme.typography.labelSmall,
+                                        fontWeight = FontWeight.SemiBold,
+                                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+
                 // CFP details
                 if (conference.cfpDeadline != null || conference.cfpUrl != null) {
                     Spacer(modifier = Modifier.height(10.dp))
@@ -490,6 +595,7 @@ fun shareConference(context: Context, conference: Conference) {
             🚀 Upcoming Tech Conference: ${conference.name}
             🗓️ Date: ${conference.formattedDate}
             📍 Location: ${conference.locationStr}
+            🎓 Eligibility: Student-Friendly (Open to Students & Professionals)
             🏷️ Category: ${conference.category}
             🔗 Link: ${conference.url}
             

@@ -74,6 +74,7 @@ def get_events():
     format_filter = request.args.get("format")
     country = request.args.get("country")
     search_query = request.args.get("search")
+    student_friendly_param = request.args.get("student_friendly")
     days_lookahead = int(request.args.get("days", 90))
 
     events = db.get_upcoming_events(
@@ -83,6 +84,9 @@ def get_events():
         country=country,
         search_query=search_query
     )
+
+    if student_friendly_param and student_friendly_param.lower() in ("true", "1", "yes"):
+        events = [e for e in events if e.is_student_friendly or "Students" in e.target_audiences]
 
     bookmarked_ids = set(db.get_bookmarked_event_ids())
     response_data = []
@@ -132,6 +136,8 @@ def get_event_detail(event_id: str):
             verification_status=r.verification_status,
             confidence_score=r.confidence_score,
             target_audiences=r.target_audiences or ["Developers"],
+            eligibility=getattr(r, "eligibility", None) or "Open to Students & Professionals (Student-Friendly)",
+            is_student_friendly=getattr(r, "is_student_friendly", True) if getattr(r, "is_student_friendly", None) is not None else True,
             sources=r.sources or []
         )
         data = conf.to_dict()

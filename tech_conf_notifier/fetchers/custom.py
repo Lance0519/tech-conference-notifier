@@ -86,6 +86,9 @@ class CustomJsonFetcher(BaseFetcher):
                     description=description,
                     fee_type=fee_type,
                     fee_amount=fee_amount,
+                    target_audiences=item.get("target_audiences", ["Developers", "Students"]),
+                    eligibility=item.get("eligibility", "Open to Students & Professionals (Student-Friendly)"),
+                    is_student_friendly=item.get("is_student_friendly", True),
                     metadata=item.get("metadata", {})
                 )
                 conferences.append(conf)

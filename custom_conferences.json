@@ -10,7 +10,10 @@
     "url": "https://reinvent.awsevents.com",
     "description": "Amazon Web Services flagship global cloud conference covering generative AI, modern infrastructure, databases, and DevOps.",
     "fee_type": "paid",
-    "fee_amount": "$2,099 (Free Virtual Keynotes)"
+    "fee_amount": "$2,099 (Free Virtual Keynotes & Student Livestream)",
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true,
+    "target_audiences": ["Developers", "Students", "IT Executives"]
   },
   {
     "name": "Google I/O Connect Asia 2027",
@@ -23,7 +26,10 @@
     "url": "https://io.google",
     "description": "Google developer conference showcasing Gemini AI, Android 16, Flutter, Web technologies, and cloud developer tools.",
     "fee_type": "free",
-    "fee_amount": "Free (Registration required)"
+    "fee_amount": "Free (Registration required - Students & Pros Welcome)",
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true,
+    "target_audiences": ["Developers", "Students", "Researchers"]
   },
   {
     "name": "PhilSec - Cybersecurity Philippines Summit 2026",
@@ -36,6 +42,9 @@
     "url": "https://philsec.com",
     "description": "National conference and exhibition focusing on cyber threat intelligence, zero trust architecture, and critical national infrastructure defense.",
     "fee_type": "free",
-    "fee_amount": "Free admission for IT professionals"
+    "fee_amount": "Free admission for IT professionals and student delegates",
+    "eligibility": "Open to Students & Professionals (Student-Friendly)",
+    "is_student_friendly": true,
+    "target_audiences": ["IT Executives", "Developers", "Students", "Researchers"]
   }
 ]

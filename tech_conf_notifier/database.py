@@ -10,7 +10,7 @@ from typing import List, Dict, Any, Optional
 
 from sqlalchemy import (
     create_engine, Column, String, Text, Date, Time, Float, Integer,
-    Boolean, DateTime, JSON, ForeignKey, UniqueConstraint, event, Index
+    Boolean, DateTime, JSON, ForeignKey, UniqueConstraint, event, Index, text
 )
 from sqlalchemy.orm import declarative_base, sessionmaker, scoped_session, Session
 from sqlalchemy.pool import QueuePool
@@ -56,6 +56,8 @@ class EventModel(Base):
     verification_status = Column(String(20), default="unverified", index=True)
     confidence_score = Column(Float, default=0.5)
     target_audiences = Column(JSON, default=lambda: ["Developers"])
+    eligibility = Column(String(255), default="Open to Students & Professionals (Student-Friendly)")
+    is_student_friendly = Column(Boolean, default=True)
     sources = Column(JSON, default=list)
     metadata_json = Column(JSON, default=dict)
     last_checked = Column(DateTime, nullable=True)
@@ -146,7 +148,21 @@ class Database:
             cursor.close()
 
         Base.metadata.create_all(self.engine)
+        self._run_migrations()
         self.SessionFactory = scoped_session(sessionmaker(bind=self.engine, expire_on_commit=False))
+
+    def _run_migrations(self):
+        try:
+            with self.engine.connect() as conn:
+                res = conn.execute(text("PRAGMA table_info(events);")).fetchall()
+                cols = [r[1] for r in res]
+                if cols and "eligibility" not in cols:
+                    conn.execute(text("ALTER TABLE events ADD COLUMN eligibility VARCHAR(255) DEFAULT 'Open to Students & Professionals (Student-Friendly)';"))
+                if cols and "is_student_friendly" not in cols:
+                    conn.execute(text("ALTER TABLE events ADD COLUMN is_student_friendly BOOLEAN DEFAULT 1;"))
+                conn.commit()
+        except Exception as e:
+            logger.debug(f"Migration check: {e}")
 
     @classmethod
     def get_instance(cls, db_path: str | Path = "tech_conferences.db") -> Database:
@@ -199,6 +215,8 @@ class Database:
                 existing.verification_status = conf.verification_status
                 existing.confidence_score = conf.confidence_score
                 existing.target_audiences = conf.target_audiences
+                existing.eligibility = conf.eligibility
+                existing.is_student_friendly = conf.is_student_friendly
                 existing.sources = conf.sources
                 existing.last_checked = datetime.now(timezone.utc)
             else:
@@ -234,6 +252,8 @@ class Database:
                     verification_status=conf.verification_status,
                     confidence_score=conf.confidence_score,
                     target_audiences=conf.target_audiences,
+                    eligibility=conf.eligibility,
+                    is_student_friendly=conf.is_student_friendly,
                     sources=conf.sources,
                     metadata_json=conf.metadata,
                     last_checked=datetime.now(timezone.utc)
@@ -314,6 +334,8 @@ class Database:
                     verification_status=r.verification_status,
                     confidence_score=r.confidence_score,
                     target_audiences=r.target_audiences or ["Developers"],
+                    eligibility=getattr(r, "eligibility", None) or "Open to Students & Professionals (Student-Friendly)",
+                    is_student_friendly=getattr(r, "is_student_friendly", True) if getattr(r, "is_student_friendly", None) is not None else True,
                     sources=r.sources or []
                 )
                 results.append(conf)

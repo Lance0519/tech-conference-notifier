@@ -80,6 +80,8 @@ class Conference:
     verification_status: str = "unverified"  # "verified", "provisional", "unverified", "dead_link"
     confidence_score: float = 0.5
     target_audiences: List[str] = field(default_factory=lambda: ["Developers"])
+    eligibility: str = "Open to Students & Professionals (Student-Friendly)"
+    is_student_friendly: bool = True
     sources: List[Dict[str, Any]] = field(default_factory=list)
     metadata: Dict[str, Any] = field(default_factory=dict)
     last_checked: Optional[datetime] = None
@@ -206,6 +208,8 @@ class Conference:
         d["is_philippines"] = self.is_philippines
         d["is_free"] = self.is_free
         d["has_cfp_open"] = self.has_cfp_open
+        d["eligibility"] = self.eligibility
+        d["is_student_friendly"] = self.is_student_friendly
         return d
 
     @classmethod
@@ -255,6 +259,8 @@ class Conference:
             verification_status=data.get("verification_status", "unverified"),
             confidence_score=float(data.get("confidence_score", 0.5)),
             target_audiences=data.get("target_audiences", ["Developers"]),
+            eligibility=data.get("eligibility", "Open to Students & Professionals (Student-Friendly)"),
+            is_student_friendly=bool(data.get("is_student_friendly", True)),
             sources=data.get("sources", []),
             metadata=data.get("metadata", {})
         )

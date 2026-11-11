@@ -36,6 +36,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -44,6 +45,8 @@ import com.techconf.notifier.data.api.ConferenceApiService
 import com.techconf.notifier.data.model.Conference
 import com.techconf.notifier.data.model.MANDATORY_CATEGORIES
 import com.techconf.notifier.ui.components.ConferenceCard
+import com.techconf.notifier.ui.theme.StatusStudentFriendly
+import com.techconf.notifier.ui.theme.StatusStudentFriendlyBg
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -61,6 +64,7 @@ fun ExploreScreen(
     var selectedRegion by remember { mutableStateOf("All") } // "All", "Philippines", "ASEAN", "Global"
     var selectedFormat by remember { mutableStateOf("All") } // "All", "in_person", "virtual", "hybrid"
     var cfpOnly by remember { mutableStateOf(false) }
+    var studentFriendlyOnly by remember { mutableStateOf(false) }
 
     var isLoading by remember { mutableStateOf(true) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
@@ -107,6 +111,10 @@ fun ExploreScreen(
                     list = list.filter { it.hasCfpOpen }
                 }
 
+                if (studentFriendlyOnly) {
+                    list = list.filter { it.isStudentFriendly || it.targetAudiences.contains("Students") }
+                }
+
                 conferences = list
             } else {
                 errorMessage = result.exceptionOrNull()?.message ?: "Unable to load events"
@@ -116,7 +124,7 @@ fun ExploreScreen(
     }
 
     // Trigger load when filter criteria change
-    LaunchedEffect(selectedCategory, selectedRegion, selectedFormat, cfpOnly) {
+    LaunchedEffect(selectedCategory, selectedRegion, selectedFormat, cfpOnly, studentFriendlyOnly) {
         loadConferences()
     }
 
@@ -125,7 +133,37 @@ fun ExploreScreen(
             .fillMaxSize()
             .padding(horizontal = 16.dp)
     ) {
-        Spacer(modifier = Modifier.height(12.dp))
+        // Student-Friendly Welcome Banner
+        Surface(
+            color = StatusStudentFriendlyBg.copy(alpha = 0.6f),
+            shape = RoundedCornerShape(12.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 10.dp, bottom = 4.dp)
+        ) {
+            Row(
+                modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(text = "🎓", fontSize = 20.sp)
+                Spacer(modifier = Modifier.width(10.dp))
+                Column {
+                    Text(
+                        text = "Student-Friendly Tech Conferences",
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = StatusStudentFriendly
+                    )
+                    Text(
+                        text = "Conferences welcome students, learners & researchers — not for professionals only! Look for student passes & academic tracks.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
+        }
+
+        Spacer(modifier = Modifier.height(8.dp))
 
         // Search Bar
         OutlinedTextField(
@@ -155,13 +193,22 @@ fun ExploreScreen(
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        // Horizontal Filter Chips 1: Region & Format & CFP
+        // Horizontal Filter Chips 1: Region & Format & CFP & Student-Friendly
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .horizontalScroll(rememberScrollState()),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
+            // Student-Friendly Chip
+            FilterChip(
+                selected = studentFriendlyOnly,
+                onClick = {
+                    studentFriendlyOnly = !studentFriendlyOnly
+                },
+                label = { Text("🎓 Student Friendly") }
+            )
+
             // Philippines Chip
             FilterChip(
                 selected = selectedRegion == "Philippines",
@@ -343,6 +390,7 @@ fun ExploreScreen(
                             selectedRegion = "All"
                             selectedFormat = "All"
                             cfpOnly = false
+                            studentFriendlyOnly = false
                             onCategoryReset()
                             loadConferences()
                         }) {

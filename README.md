@@ -14,11 +14,11 @@ Anchored to the **Asia/Manila (UTC+8)** timezone, the system continuously aggreg
 
 You can run the IT & Tech Conference Notifier directly on your Android phone **independently with only Wi-Fi needed** — no PC or Python server required!
 
-[![Download Android APK](https://img.shields.io/badge/Download-Android%20APK%20(v1.0.0)-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/Lance0519/tech-conference-notifier/releases/download/v1.0.0/TechConfNotifier.apk)
+[![Download Android APK](https://img.shields.io/badge/Download-Android%20APK%20(v1.1.0)-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/Lance0519/tech-conference-notifier/releases/download/v1.1.0/TechConfNotifier.apk)
 [![GitHub Release](https://img.shields.io/badge/GitHub-Latest%20Release-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Lance0519/tech-conference-notifier/releases/latest)
 
 ### 📥 Direct Download Links:
-- 🚀 **[Download TechConfNotifier.apk (Official Release Direct Download)](https://github.com/Lance0519/tech-conference-notifier/releases/download/v1.0.0/TechConfNotifier.apk)** *(13.1 MB)*
+- 🚀 **[Download TechConfNotifier.apk (Release v1.1.0 Direct Download)](https://github.com/Lance0519/tech-conference-notifier/releases/download/v1.1.0/TechConfNotifier.apk)** *(13.2 MB)*
 - 📦 **[View Latest Release on GitHub](https://github.com/Lance0519/tech-conference-notifier/releases/latest)**
 - 🌐 **Web PWA Direct Download**: Launch `.\run_mobile_app.bat` and click **"📲 Get APK"** in the top navigation bar or navigate to `http://localhost:5000/download/apk`.
 - ⚡ **One-Click USB/ADB Install** (if phone is connected to PC):
@@ -29,11 +29,11 @@ You can run the IT & Tech Conference Notifier directly on your Android phone **i
 > [!TIP]
 > **If you are using the GitHub Mobile App:**
 > 1. Scroll to the **Releases** section on the repository main page.
-> 2. Tap **v1.0.0 (Latest)**.
+> 2. Tap **v1.1.0 (Latest)**.
 > 3. Under **Assets**, tap **`TechConfNotifier.apk`** to download it directly into your phone's notification bar and Downloads folder!
 
 ### 📋 How to Install on Your Android Phone:
-1. Tap the **[Download TechConfNotifier.apk](https://github.com/Lance0519/tech-conference-notifier/releases/download/v1.0.0/TechConfNotifier.apk)** link from your phone or GitHub Mobile.
+1. Tap the **[Download TechConfNotifier.apk](https://github.com/Lance0519/tech-conference-notifier/releases/download/v1.1.0/TechConfNotifier.apk)** link from your phone or GitHub Mobile.
 2. Open your phone's **Downloads** folder or notification drawer and tap **`TechConfNotifier.apk`**.
 3. If Android shows a prompt saying *"For your security, your phone is not allowed to install unknown apps from this source"*, tap **Settings** and toggle **"Allow from this source"** to **ON**.
 4. Tap **Install** and then **Open**.
@@ -171,6 +171,12 @@ The system enforces strict gatekeeping to guarantee that only authentic tech con
 - **Telegram Bot**: MarkdownV2 formatted telegram alerts.
 - **SMTP Email**: Multipart HTML + Plain Text digests.
 - **Visual HTML & Markdown Digests**: Self-contained visual catalogs saved locally (`upcoming_conferences.html` and `upcoming_conferences.md`).
+
+### 7. Student-Friendly Eligibility & Inclusivity
+- **Open to All Learners**: Conferences are explicitly marked with `🎓 Student Friendly` badges, indicating they are not reserved for industry professionals only.
+- **Discount & Track Visibility**: Notes on student ticket tiers, volunteer slots, and academic project showcases are prominently surfaced.
+- **One-Tap Filtering**: Both the Android app and Web PWA include a `🎓 Student Friendly` quick filter chip.
+- **Eligibility Details Dialog**: Every conference provides a dedicated eligibility card explaining that high school, undergraduate, graduate, and self-taught learners are welcome to attend and submit proposals.
 
 ---
 

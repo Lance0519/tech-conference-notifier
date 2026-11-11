@@ -46,6 +46,7 @@ class DigestNotifier(BaseNotifier):
         lines = [
             "# 🔔 Upcoming IT, Computer Science & Technology Conferences",
             f"*Generated on {now_str}*\n",
+            "> 🎓 **Student-Friendly Guarantee:** All listed conferences welcome students, learners, and aspiring tech enthusiasts alongside industry professionals! Look for student discount passes, academic tracks, and volunteer opportunities.\n",
             "| Event Name | Category | Date | Location | Format | Status | Official Link |",
             "| :--- | :--- | :--- | :--- | :--- | :--- | :--- |"
         ]
@@ -53,8 +54,9 @@ class DigestNotifier(BaseNotifier):
         for c in conferences:
             flag = "🇵🇭 " if c.is_philippines else ""
             fmt = c.format.capitalize()
+            student_tag = " 🎓 *(Student-Friendly)*" if c.is_student_friendly else ""
             lines.append(
-                f"| **{c.name}** | {c.category} | {c.formatted_date_range} | {flag}{c.location_str} | {fmt} | {c.status_label} | [Visit Site]({c.url}) |"
+                f"| **{c.name}**{student_tag} | {c.category} | {c.formatted_date_range} | {flag}{c.location_str} | {fmt} | {c.status_label} | [Visit Site]({c.url}) |"
             )
 
         with open(self.output_markdown, "w", encoding="utf-8") as f:
@@ -76,17 +78,20 @@ class DigestNotifier(BaseNotifier):
 
             cfp_html = f"<div class='cfp'>📝 CFP: {c.cfp_deadline.strftime('%b %d, %Y')}</div>" if c.cfp_deadline else ""
             fee_html = f"<span class='fee'>{c.fee_amount}</span>" if c.fee_amount != "Not announced" else ""
+            student_badge = "<span class='badge' style='background:#10b98122; color:#10b981; border:1px solid #10b98144;'>🎓 Student Friendly</span>" if c.is_student_friendly else ""
 
             cards_html += f"""
             <div class="card" data-category="{c.category}" data-country="{c.country}">
                 <div class="card-header">
                     <span class="badge" style="background:{badge_color}22; color:{badge_color}; border:1px solid {badge_color}44;">{c.category}</span>
+                    {student_badge}
                     <span class="status">{c.status_label}</span>
                 </div>
                 <h3>{c.name}</h3>
                 <div class="meta">
                     <div>📅 {c.formatted_date_range}</div>
                     <div>📍 {flag}{c.location_str}</div>
+                    <div>🎓 Eligibility: Student-Friendly (Students & Pros Welcome)</div>
                     <div>🏢 {c.organizer}</div>
                 </div>
                 <p class="desc">{c.description if c.description != 'Not available' else ''}</p>
@@ -231,6 +236,13 @@ class DigestNotifier(BaseNotifier):
             </div>
             <p style="color:var(--text-muted);">Discovered automatically &bull; Last updated {now_str}</p>
         </header>
+        <div style="background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.3); border-radius:12px; padding:14px 20px; margin-bottom:24px; display:flex; align-items:center; gap:14px;">
+            <span style="font-size:26px;">🎓</span>
+            <div>
+                <strong style="color:#10b981; font-size:15px;">Student-Friendly Conferences:</strong>
+                <span style="color:#cbd5e1; font-size:14px;"> All listed conferences are open to students, researchers, and learners &mdash; not for industry professionals only! Look out for student discount passes, academic tracks, and volunteer perks.</span>
+            </div>
+        </div>
         <div class="search-bar">
             <input type="text" id="searchInput" placeholder="Search conferences, topics, cities, or countries..." onkeyup="filterCards()">
         </div>

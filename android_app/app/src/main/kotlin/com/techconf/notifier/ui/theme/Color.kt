@@ -30,6 +30,10 @@ val StatusNormalBg = Color(0xFFE1F5FE)
 val StatusCfpOpen = Color(0xFF2E7D32)     // Green
 val StatusCfpOpenBg = Color(0xFFE8F5E9)
 
+// Student-Friendly Badge Colors
+val StatusStudentFriendly = Color(0xFF047857)    // Emerald Green
+val StatusStudentFriendlyBg = Color(0xFFD1FAE5)  // Light Mint Green
+
 // Regional Philippines Badge
 val PhFlagBlue = Color(0xFF0038A8)
 val PhFlagRed = Color(0xFFCE1126)
